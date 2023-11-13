@@ -2135,7 +2135,7 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ee4bb;
+			border-color: #https://goncalo-araujo.github.io/ines-e-goncalo/;
 		}
 
 	label {
@@ -2256,8 +2256,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #49fcd4;
-			box-shadow: 0 0 0 1px #49fcd4;
+			border-color: #https://goncalo-araujo.github.io/ines-e-goncalo/;
+			box-shadow: 0 0 0 1px #https://goncalo-araujo.github.io/ines-e-goncalo/;
 		}
 
 	input[type="checkbox"] + label:before {
