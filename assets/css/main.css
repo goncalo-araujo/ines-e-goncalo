@@ -3588,14 +3588,14 @@ input, select, textarea {
 
 					#wrapper > section > header {
 						background-attachment: fixed;
-						background-color: #d0b135a2;
-						background-position: 25% 50%;
+						background-color: #d0b135;
+						background-position: 50% 50%;
 						background-repeat: repeat-y;
 						background-size: 40rem auto;
 					}
 
 						#wrapper > section > header > * {
-							max-width: 25rem;
+							max-width: 50rem;
 						}
 
 						#wrapper > section > header > :last-child {
