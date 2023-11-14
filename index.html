@@ -21,16 +21,17 @@
 				<!-- Intro -->
 					<section class="intro" style="center;">
 						<header>
-							<h1 style="font-family: Bell MT; text-align: center;">Inês <br> & <br> Gonçalo</h1>
-
-							<p style="text-align: center; font-size: 40px; font-family: Pristina;"> 01.06.2024 </p>
-							<p style="text-align: center; font-size: 20px;"> Aqui jaz um pequeno texto a falar de nós e da nossa relação. </p>
+							<h1 style="font-family: Helvetica; text-align: center;">Inês <br> & <br> Gonçalo</h1>
+							<hr>
+							<p style="text-align: center; font-size: 30px; font-family: CountryBluePrint;"> <strong>01.06.2024</strong> </p>
+							<hr>
+							<p style="text-align: center; font-size: 20px;font-family: Helvetica;"> Aqui fica um pequeno texto a falar de nós e da nossa relação. </p>
 							<ul class="actions">
 								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
 						</header>
 						<div class="content" >
-							<span class="image fill" data-position="center"><img src="images/cover1.jpg" alt="" width="0%" /></span>
+							<span class="image fill" data-position="center"><img src="images/cover1.jpg" alt="" width="100%" /></span>
 						</div>
 					</section>
 
@@ -42,20 +43,20 @@
 						<div class="content">
 							<div class="content">
 								<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
-								<form>
+								<form action="mail.php", method="POST">
 									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
+										<div class="field">
+											<input type="text" name="name" id="name" placeholder="Nome" />
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+											<input type="text" name="name2" id="name2" placeholder="Nome do acompanhante se aplicável" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Por favor indica número de crianças e quaisquer restrições ou preferências alimentares" rows="7"></textarea>
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="button primary" /></li>
+										<li><input type="submit" value="Confirmar Presença" class="button primary" /></li>
 									</ul>
 								</form>
 							</div>
@@ -91,9 +92,24 @@
 										<h3>Direções</h3>
 										<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
 									</header>
-									<div class="content">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="465" height="465" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<div class="iframe-container">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 									</div>
+
+									<style>
+										.iframe-container {
+											position: relative;
+											width: 77%;
+											padding-bottom: 56.25%; /* 16:9 aspect ratio */
+										}
+										.iframe-container iframe {
+											position: absolute;
+											top: 0;
+											left: 4rem;
+											width: 100%;
+											height: 100%;
+										}
+									</style>
 								</section>
 
 							<!-- Section -->
