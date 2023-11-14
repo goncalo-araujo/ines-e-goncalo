@@ -2131,7 +2131,7 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #https://goncalo-araujo.github.io/ines-e-goncalo/;
+			border-color: #d0b135a2;
 		}
 
 	label {
@@ -2252,8 +2252,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #https://goncalo-araujo.github.io/ines-e-goncalo/;
-			box-shadow: 0 0 0 1px #https://goncalo-araujo.github.io/ines-e-goncalo/;
+			border-color: #d0b135a2;
+			box-shadow: 0 0 0 1px #d0b135a2;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -3337,7 +3337,7 @@ input, select, textarea {
 			}
 
 				#wrapper > section > .content > section:first-child {
-					margin-top: 6rem;
+					margin-top: 0rem;
 				}
 
 			#wrapper > section.intro {
