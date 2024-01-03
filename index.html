@@ -192,11 +192,56 @@
 										<div class="field">
 											<textarea name="message" id="message" placeholder="Por favor indica número de crianças e quaisquer restrições ou preferências alimentares" rows="7"></textarea>
 										</div>
+										<div class="field" id="peopleContainer">
+											<button type="button" onclick="addPerson()">Adicionar criança</button>
+										</div>
+										
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Confirmar Presença" class="button primary" /></li>
 									</ul>
 								</form>
+
+								<form id="peopleForm">
+									<div id="peopleContainer">
+										<!-- Dynamic fields will be added here -->
+									</div>
+									<button type="button" onclick="addPerson()">Adicionar criança</button>
+								</form>
+								
+								<script>
+									function addPerson() {
+										// Create a container div for each person
+										var container = document.createElement("div");
+										container.classList.add("person-container");
+								
+										// Add name input field
+										var nameInput = document.createElement("input");
+										nameInput.type = "text";
+										nameInput.name = "names[]";
+										nameInput.placeholder = "Nome";
+										container.appendChild(nameInput);
+								
+										// Add age input field
+										var ageInput = document.createElement("input");
+										ageInput.type = "text";
+										ageInput.name = "ages[]";
+										ageInput.placeholder = "Idade";
+										container.appendChild(ageInput);
+								
+										// Add Remove Person button
+										var removeButton = document.createElement("button");
+										removeButton.type = "button";
+										removeButton.textContent = "Remover";
+										removeButton.onclick = function() {
+											container.remove();
+										};
+										container.appendChild(removeButton);
+								
+										// Append the container to the peopleContainer div
+										document.getElementById("peopleContainer").appendChild(container);
+									}
+								</script>
 						</div>
 					</section>
 
