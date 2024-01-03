@@ -176,7 +176,7 @@
 
 					<section>
 						<header>
-							<h2>Confirma a tua presença :-)</h2>
+							<h2>Confirma a tua presença</h2>
 						</header>
 						<div class="content">
 							<div class="content">
@@ -184,21 +184,28 @@
 									<div class="fields">
 										<div class="field">
 											<input type="text" name="name" id="name" placeholder="Nome" />
+											<hr class="form-separator">
 										</div>
-										<div class="field">
-											<input type="text" name="name2" id="name2" placeholder="Nome do acompanhante (opcional)" />
+
+										<div class="field" id="guestContainer">
+											<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
+											
 										</div>
 
 										<div class="field" id="peopleContainer">
+											
 											<button type="button" onclick="addPerson()">Adicionar criança</button>
 										</div>
-
-										
+								
 										<div class="field" id="restrictionsContainer">
+								
 											<button type="button" onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
 										</div>
+										
 									</div>
+									<hr class="form-separator">
 									<ul class="actions">
+										
 										<li><input type="submit" value="Confirmar Presença" class="button primary" /></li>
 									</ul>
 								</form>
@@ -229,7 +236,7 @@
 							// Add Remove Person button
 							var removeButton = document.createElement("button");
 							removeButton.type = "button";
-							removeButton.textContent = "Remover";
+							removeButton.textContent = "Remover criança";
 							removeButton.onclick = function() {
 								container.remove();
 							};
@@ -261,7 +268,7 @@
 							// Add Remove Food Restriction button
 							var removeRestrictionButton = document.createElement("button");
 							removeRestrictionButton.type = "button";
-							removeRestrictionButton.textContent = "Remover";
+							removeRestrictionButton.textContent = "Remover restrição";
 							removeRestrictionButton.onclick = function() {
 								restrictionContainer.remove();
 							};
@@ -269,6 +276,30 @@
 					
 							// Append the restriction container to the restrictionsContainer div
 							document.getElementById("restrictionsContainer").appendChild(restrictionContainer);
+						}
+						function addGuest() {
+							// Create a container div for each guest
+							var container = document.createElement("div");
+							container.classList.add("person-container");
+
+							// Add name input field for the guest
+							var nameInput = document.createElement("input");
+							nameInput.type = "text";
+							nameInput.name = "guestNames[]";
+							nameInput.placeholder = "Nome";
+							container.appendChild(nameInput);
+
+							// Add Remove Guest button
+							var removeButton = document.createElement("button");
+							removeButton.type = "button";
+							removeButton.textContent = "Remover acompanhante";
+							removeButton.onclick = function() {
+								container.remove();
+							};
+							container.appendChild(removeButton);
+
+							// Append the container to the guestContainer div
+							document.getElementById("guestContainer").appendChild(container);
 						}
 					</script>
 
