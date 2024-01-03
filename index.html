@@ -214,26 +214,26 @@
 					</section>
 					
 					<script>
+						var personCounter = 1;
+						var guestCounter = 1;
+						var restrictionCounter = 1;
+					
 						function addPerson() {
-							// Create a container div for each person
 							var container = document.createElement("div");
 							container.classList.add("person-container");
 					
-							// Add name input field
 							var nameInput = document.createElement("input");
 							nameInput.type = "text";
-							nameInput.name = "names[]";
+							nameInput.name = "names[" + personCounter + "]";
 							nameInput.placeholder = "Nome da criança";
 							container.appendChild(nameInput);
 					
-							// Add age input field
 							var ageInput = document.createElement("input");
 							ageInput.type = "text";
-							ageInput.name = "ages[]";
+							ageInput.name = "ages[" + personCounter + "]";
 							ageInput.placeholder = "idade";
 							container.appendChild(ageInput);
 					
-							// Add Remove Person button
 							var removeButton = document.createElement("button");
 							removeButton.type = "button";
 							removeButton.textContent = "Remover criança";
@@ -242,30 +242,26 @@
 							};
 							container.appendChild(removeButton);
 					
-							// Append the container to the peopleContainer div
 							document.getElementById("peopleContainer").appendChild(container);
+							personCounter++;
 						}
 					
 						function addFoodRestriction() {
-							// Create a container div for food restriction
 							var restrictionContainer = document.createElement("div");
 							restrictionContainer.classList.add("restriction-container");
 					
-							// Add input field for the name of person with the restriction
 							var personNameInput = document.createElement("input");
 							personNameInput.type = "text";
-							personNameInput.name = "personNamesWithRestriction[]";
+							personNameInput.name = "personNamesWithRestriction[" + restrictionCounter + "]";
 							personNameInput.placeholder = "Nome da pessoa com restrição";
 							restrictionContainer.appendChild(personNameInput);
 					
-							// Add input field for the type of food restriction
 							var restrictionTypeInput = document.createElement("input");
 							restrictionTypeInput.type = "text";
-							restrictionTypeInput.name = "foodRestrictions[]";
+							restrictionTypeInput.name = "foodRestrictions[" + restrictionCounter + "]";
 							restrictionTypeInput.placeholder = "Tipo de restrição";
 							restrictionContainer.appendChild(restrictionTypeInput);
 					
-							// Add Remove Food Restriction button
 							var removeRestrictionButton = document.createElement("button");
 							removeRestrictionButton.type = "button";
 							removeRestrictionButton.textContent = "Remover restrição";
@@ -274,22 +270,20 @@
 							};
 							restrictionContainer.appendChild(removeRestrictionButton);
 					
-							// Append the restriction container to the restrictionsContainer div
 							document.getElementById("restrictionsContainer").appendChild(restrictionContainer);
+							restrictionCounter++;
 						}
+					
 						function addGuest() {
-							// Create a container div for each guest
 							var container = document.createElement("div");
 							container.classList.add("person-container");
-
-							// Add name input field for the guest
+					
 							var nameInput = document.createElement("input");
 							nameInput.type = "text";
-							nameInput.name = "guestNames[]";
+							nameInput.name = "guestNames[" + guestCounter + "]";
 							nameInput.placeholder = "Nome";
 							container.appendChild(nameInput);
-
-							// Add Remove Guest button
+					
 							var removeButton = document.createElement("button");
 							removeButton.type = "button";
 							removeButton.textContent = "Remover acompanhante";
@@ -297,9 +291,9 @@
 								container.remove();
 							};
 							container.appendChild(removeButton);
-
-							// Append the container to the guestContainer div
+					
 							document.getElementById("guestContainer").appendChild(container);
+							guestCounter++;
 						}
 					</script>
 
