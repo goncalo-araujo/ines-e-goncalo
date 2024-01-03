@@ -180,70 +180,97 @@
 						</header>
 						<div class="content">
 							<div class="content">
-								<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
 								<form action="https://formsubmit.io/send/inesegonccalo@gmail.com" method="POST">
 									<div class="fields">
 										<div class="field">
 											<input type="text" name="name" id="name" placeholder="Nome" />
 										</div>
 										<div class="field">
-											<input type="text" name="name2" id="name2" placeholder="Nome do acompanhante se aplicável" />
+											<input type="text" name="name2" id="name2" placeholder="Nome do acompanhante (opcional)" />
 										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Por favor indica número de crianças e quaisquer restrições ou preferências alimentares" rows="7"></textarea>
-										</div>
+
 										<div class="field" id="peopleContainer">
 											<button type="button" onclick="addPerson()">Adicionar criança</button>
 										</div>
+
 										
+										<div class="field" id="restrictionsContainer">
+											<button type="button" onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
+										</div>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Confirmar Presença" class="button primary" /></li>
 									</ul>
 								</form>
 
-								<form id="peopleForm">
-									<div id="peopleContainer">
-										<!-- Dynamic fields will be added here -->
-									</div>
-									<button type="button" onclick="addPerson()">Adicionar criança</button>
-								</form>
-								
-								<script>
-									function addPerson() {
-										// Create a container div for each person
-										var container = document.createElement("div");
-										container.classList.add("person-container");
-								
-										// Add name input field
-										var nameInput = document.createElement("input");
-										nameInput.type = "text";
-										nameInput.name = "names[]";
-										nameInput.placeholder = "Nome";
-										container.appendChild(nameInput);
-								
-										// Add age input field
-										var ageInput = document.createElement("input");
-										ageInput.type = "text";
-										ageInput.name = "ages[]";
-										ageInput.placeholder = "Idade";
-										container.appendChild(ageInput);
-								
-										// Add Remove Person button
-										var removeButton = document.createElement("button");
-										removeButton.type = "button";
-										removeButton.textContent = "Remover";
-										removeButton.onclick = function() {
-											container.remove();
-										};
-										container.appendChild(removeButton);
-								
-										// Append the container to the peopleContainer div
-										document.getElementById("peopleContainer").appendChild(container);
-									}
-								</script>
 						</div>
 					</section>
+					
+					<script>
+						function addPerson() {
+							// Create a container div for each person
+							var container = document.createElement("div");
+							container.classList.add("person-container");
+					
+							// Add name input field
+							var nameInput = document.createElement("input");
+							nameInput.type = "text";
+							nameInput.name = "names[]";
+							nameInput.placeholder = "Name";
+							container.appendChild(nameInput);
+					
+							// Add age input field
+							var ageInput = document.createElement("input");
+							ageInput.type = "number";
+							ageInput.name = "ages[]";
+							ageInput.placeholder = "Age";
+							container.appendChild(ageInput);
+					
+							// Add Remove Person button
+							var removeButton = document.createElement("button");
+							removeButton.type = "button";
+							removeButton.textContent = "Remove Person";
+							removeButton.onclick = function() {
+								container.remove();
+							};
+							container.appendChild(removeButton);
+					
+							// Append the container to the peopleContainer div
+							document.getElementById("peopleContainer").appendChild(container);
+						}
+					
+						function addFoodRestriction() {
+							// Create a container div for food restriction
+							var restrictionContainer = document.createElement("div");
+							restrictionContainer.classList.add("restriction-container");
+					
+							// Add input field for the name of person with the restriction
+							var personNameInput = document.createElement("input");
+							personNameInput.type = "text";
+							personNameInput.name = "personNamesWithRestriction[]";
+							personNameInput.placeholder = "Person Name with Restriction";
+							restrictionContainer.appendChild(personNameInput);
+					
+							// Add input field for the type of food restriction
+							var restrictionTypeInput = document.createElement("input");
+							restrictionTypeInput.type = "text";
+							restrictionTypeInput.name = "foodRestrictions[]";
+							restrictionTypeInput.placeholder = "Food Restriction Type";
+							restrictionContainer.appendChild(restrictionTypeInput);
+					
+							// Add Remove Food Restriction button
+							var removeRestrictionButton = document.createElement("button");
+							removeRestrictionButton.type = "button";
+							removeRestrictionButton.textContent = "Remove Food Restriction";
+							removeRestrictionButton.onclick = function() {
+								restrictionContainer.remove();
+							};
+							restrictionContainer.appendChild(removeRestrictionButton);
+					
+							// Append the restriction container to the restrictionsContainer div
+							document.getElementById("restrictionsContainer").appendChild(restrictionContainer);
+						}
+					</script>
 
 				<!-- Elements -->
 				<!--
