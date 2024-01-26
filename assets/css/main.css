@@ -29,6 +29,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+
+
 body {
 	line-height: 1;
 }
@@ -357,7 +359,7 @@ input, select, textarea {
 		}
 
 		hr.form-separator {
-			border: 1px solid rgba(190, 157, 25, 0.645);
+			border: 1px solid #405fba;
 			margin: 3 rem 0; /* Adjust margin as needed */
 		}
 	
@@ -1883,6 +1885,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		margin-left: 2rem;
 	}
 
 		input[type="submit"]:hover,
@@ -1890,8 +1893,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px rgb(186, 186, 5);
-			color: rgb(201, 201, 29) !important;
+			box-shadow: inset 0 0 0 2px#405fba;
+			color: #405fba !important;
 		}
 
 		input[type="submit"]:active,
@@ -1900,8 +1903,8 @@ input, select, textarea {
 		button:active,
 		.button:active {
 			background-color: rgb(0, 0, 0))
-			box-shadow: inset 0 0 0 2px  rgb(209, 181, 22);
-			color:  rgb(209, 181, 22) !important;
+			box-shadow: inset 0 0 0 2px #2F4BA1;
+			color: #405fba !important;
 		}
 
 		input[type="submit"].small,
@@ -1913,6 +1916,7 @@ input, select, textarea {
 			height: 2.25rem;
 			line-height: 2.25rem;
 			padding: 0 1.25rem;
+			margin-left: 0rem;
 		}
 
 		input[type="submit"].large,
@@ -1924,6 +1928,7 @@ input, select, textarea {
 			height: 3.2625rem;
 			line-height: 3.2625rem;
 			padding: 0 3.25rem;
+			margin-left: 0rem;
 		}
 
 		input[type="submit"].wide,
@@ -1932,6 +1937,7 @@ input, select, textarea {
 		button.wide,
 		.button.wide {
 			min-width: 13rem;
+			margin-left: 0rem;
 		}
 
 		input[type="submit"].icon:before,
@@ -1940,6 +1946,7 @@ input, select, textarea {
 		button.icon:before,
 		.button.icon:before {
 			margin-right: 0.5rem;
+			margin-left: 0rem;
 		}
 
 		input[type="submit"].fit,
@@ -1968,9 +1975,10 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: rgb(208, 208, 23);
+			background-color: #405fba;
 			box-shadow: none;
 			color: #000000 !important;
+			margin-left: 0rem;
 		}
 
 			input[type="submit"].primary:hover,
@@ -1978,7 +1986,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color:  rgba(128, 128, 0, 0.447);
+				background-color: #405fba;
 			}
 
 			input[type="submit"].primary:active,
@@ -1986,7 +1994,8 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color:  rgb(209, 181, 22);
+				background-color:#405fba;
+				margin-left: 0rem;
 			}
 
 		@media screen and (max-width: 736px) {
@@ -1999,6 +2008,7 @@ input, select, textarea {
 				font-size: 0.7rem;
 				height: 3.3rem;
 				line-height: 3.3rem;
+				margin-left: 0rem;
 			}
 
 				input[type="submit"].large,
@@ -2009,6 +2019,7 @@ input, select, textarea {
 					font-size: 0.8rem;
 					height: 3.75rem;
 					line-height: 3.75rem;
+					margin-left: 0rem;
 				}
 
 				input[type="submit"].small,
@@ -2019,8 +2030,21 @@ input, select, textarea {
 					font-size: 0.6rem;
 					height: 3rem;
 					line-height: 3rem;
+					margin-left: 0rem;
 				}
 
+		}
+		
+		.field-group {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-left: 0rem;
+		}
+		
+		.add-button {
+			margin-top: 10px; /* Adjust as needed */
+			margin-left: 0rem;
 		}
 
 /* Form */
@@ -2031,6 +2055,7 @@ input, select, textarea {
 
 		form > :last-child {
 			margin-bottom: 0;
+			margin-left: 0rem;
 		}
 
 		form > .fields {
@@ -2042,7 +2067,7 @@ input, select, textarea {
 			-webkit-flex-wrap: wrap;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
-			margin: -2rem 0 2rem -2rem;
+			margin: 0rem 0rem 2rem -2rem;
 			width: calc(100% + 4rem);
 		}
 
@@ -2057,22 +2082,28 @@ input, select, textarea {
 				flex-shrink: 0;
 				padding: 2rem 0 0 2rem;
 				width: calc(100% - 2rem);
+				
 			}
 
 				form > .fields > .field > :last-child {
-					margin-bottom: 0;
+					margin-bottom: 1rem;
+					margin-left: 0rem;
+
 				}
 
 				form > .fields > .field.half {
 					width: calc(50% - 1rem);
+					margin-left: 0rem;
 				}
 
 				form > .fields > .field.third {
 					width: calc(100%/3 - 0.66667rem);
+					margin-left: 0rem;
 				}
 
 				form > .fields > .field.quarter {
 					width: calc(25% - 0.5rem);
+					margin-left: 0rem;
 				}
 
 		@media screen and (max-width: 480px) {
@@ -2080,23 +2111,28 @@ input, select, textarea {
 			form > .fields {
 				margin: -1.5rem 0 2rem -1.5rem;
 				width: calc(100% + 3rem);
+				margin-left: 0rem;
 			}
 
 				form > .fields > .field {
 					padding: 1.5rem 0 0 1.5rem;
 					width: calc(100% - 1.5rem);
+					margin-left: 0rem;
 				}
 
 					form > .fields > .field.half {
 						width: calc(100% - 1.5rem);
+						margin-left: 0rem;
 					}
 
 					form > .fields > .field.third {
 						width: calc(100% - 1.5rem);
+						margin-left: 0rem;
 					}
 
 					form > .fields > .field.quarter {
 						width: calc(100% - 1.5rem);
+						margin-left: 0rem;
 					}
 
 		}
@@ -2114,7 +2150,7 @@ input, select, textarea {
 		-ms-appearance: none;
 		appearance: none;
 		border-radius: 0.325rem;
-		border: solid 2px  rgb(209, 181, 22);
+		border: solid 2px #405fba;
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -2142,7 +2178,7 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: rgb(209, 181, 22);
+			border-color:#405fba;
 		}
 
 	label {
@@ -2248,15 +2284,15 @@ input, select, textarea {
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
 			content: '\f00c';
-			background-color: rgb(209, 181, 22);
-			border-color: rgb(209, 181, 22);
+			background-color: #405fba;
+			border-color: #405fba;
 			color: #ffffff;
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color:  rgb(209, 181, 22);
-			box-shadow: 0 0 0 1px  rgb(209, 181, 22);
+			border-color:  #405fba;
+			box-shadow: 0 0 0 1px #405fba;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -3208,7 +3244,7 @@ input, select, textarea {
 
 		#wrapper:before {
 			background-attachment: fixed;
-			background-color: rgb(209, 181, 22);
+			background-color:#405fba;
 			background-position: -50% 10%;
 			background-repeat: repeat-y;
 			background-size: 75% auto;
@@ -3571,7 +3607,7 @@ input, select, textarea {
 
 					#wrapper > section > header {
 						background-attachment: fixed;
-						background-color: rgb(209, 181, 22);
+						background-color:#405fba;
 						background-position: 25% 50%;
 						background-repeat: repeat-y;
 						background-size: 40rem auto;

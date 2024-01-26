@@ -12,8 +12,10 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/webfonts/">
 	</head>
 	<body class="is-preload">
+	
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -21,7 +23,7 @@
 				<!-- Intro -->
 				<section class="intro">
 					<header  style="text-align: center;">
-						<p style="font-family: Edwardian Script ITC, cursive, sans-serif ; text-align: center; font-size: 75px; line-height: 1">
+						<p style="font-family: Great Vibes, cursive, sans-serif ; text-align: center; font-size: 75px; line-height: 1">
 							Inês <br>
 							e <br>
 							Gonçalo
@@ -29,13 +31,13 @@
 						<hr>
 						<p style="text-align: center; font-size: 40px; font-family: Bell MT;"> 01.06.2024 </p>
 						<hr>
-						<p style="text-align: center; font-size: 40px;font-family: Edwardian Script ITC, cursive, sans-serif;"> Lodge Monte do Sobral, Alcáçovas, Évora </p>
+						<p style="text-align: center; font-size: 40px;font-family: Great Vibes, cursive;"> Lodge Monte do Sobral, Alcáçovas, Évora </p>
 						<ul class="actions">
 							<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 						</ul>
 					</header>
 					<div class="content" >
-						<span class="image fill" data-position="center"><img src="images/test_website.jpeg" alt=""  /></span>
+						<span class="image fill" data-position="center"><img src="images/invite-horizontal1.jpg" alt=""  /></span>
 					</div>
 				</section>
 
@@ -179,39 +181,41 @@
 							<h2>Confirma a tua presença</h2>
 						</header>
 						<div class="content">
-							<div class="content">
-								<form action="https://formsubmit.io/send/inesegonccalo@gmail.com" method="POST">
-									<div class="fields">
-										<div class="field">
-											<input type="text" name="name" id="name" placeholder="Nome" />
-											<hr class="form-separator">
-										</div>
-
-										<div class="field" id="guestContainer">
-											<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
-											
-										</div>
-
-										<div class="field" id="peopleContainer">
-											
-											<button type="button" onclick="addPerson()">Adicionar criança</button>
-										</div>
-								
-										<div class="field" id="restrictionsContainer">
-								
-											<button type="button" onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
-										</div>
+							<form action="https://formsubmit.io/send/inesegonccalo@gmail.com" method="POST">
+								<div class="fields">
+									<div class="field">
+										<input type="text" name="name" id="name" placeholder="Nome" />
+										<hr class="form-separator">
+									</div>
+					
+									<div class="field" id="guestContainer">
+									
+										<!-- Guest entries will be added here -->
 										
 									</div>
-									<hr class="form-separator">
-									<ul class="actions">
-										
-										<li><input type="submit" value="Confirmar Presença" class="button primary large" /></li>
-									</ul>
-								</form>
-
+									<br>
+									<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
+					
+									<div class="field" id="peopleContainer">
+										<!-- Children entries will be added here -->
+									</div> 
+									<button type="button" onclick="addPerson()">Adicionar criança</button>
+									<br> <!-- Line break after children field -->
+					
+									<div class="field" id="restrictionsContainer">
+										<!-- Food restriction entries will be added here -->
+									</div>
+									<button type="button"  onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
+									<br> <!-- Line break after food restriction field -->
+								</div>
+								<hr class="form-separator">
+								<ul class="actions">
+									<li><input type="submit" value="Confirmar Presença" class="primary large button" /></li>
+								</ul>
+							</form>
 						</div>
-					</section>
+					</section> 
+					
 					
 					<script>
 						var personCounter = 1;
@@ -241,6 +245,7 @@
 								container.remove();
 							};
 							container.appendChild(removeButton);
+
 					
 							document.getElementById("peopleContainer").appendChild(container);
 							personCounter++;
@@ -250,11 +255,17 @@
 							var restrictionContainer = document.createElement("div");
 							restrictionContainer.classList.add("restriction-container");
 					
-							var personNameInput = document.createElement("input");
-							personNameInput.type = "text";
-							personNameInput.name = "personNamesWithRestriction[" + restrictionCounter + "]";
-							personNameInput.placeholder = "Nome da pessoa com restrição";
-							restrictionContainer.appendChild(personNameInput);
+							var allNames = getAllNames();
+					
+							var personNameSelect = document.createElement("select");
+							personNameSelect.name = "personNamesWithRestriction[" + restrictionCounter + "]";
+							allNames.forEach(function(name) {
+								var option = document.createElement("option");
+								option.value = name;
+								option.textContent = name;
+								personNameSelect.appendChild(option);
+							});
+							restrictionContainer.appendChild(personNameSelect);
 					
 							var restrictionTypeInput = document.createElement("input");
 							restrictionTypeInput.type = "text";
@@ -270,8 +281,21 @@
 							};
 							restrictionContainer.appendChild(removeRestrictionButton);
 					
+							restrictionContainer.appendChild(document.createElement("br")); // Add line break after remove button
+					
 							document.getElementById("restrictionsContainer").appendChild(restrictionContainer);
 							restrictionCounter++;
+						}
+					
+						function getAllNames() {
+							var names = [];
+							var nameInputs = document.querySelectorAll('input[type="text"]');
+							nameInputs.forEach(function(input) {
+								if(input.value && (input.name.startsWith("name") || input.name.startsWith("names") || input.name.startsWith("guestNames"))) {
+									names.push(input.value);
+								}
+							});
+							return names.filter((value, index, self) => self.indexOf(value) === index); // Remove duplicates
 						}
 					
 						function addGuest() {
@@ -292,10 +316,14 @@
 							};
 							container.appendChild(removeButton);
 					
+							container.appendChild(document.createElement("br")); // Add line break after remove button
+					
 							document.getElementById("guestContainer").appendChild(container);
 							guestCounter++;
 						}
 					</script>
+					
+					
 
 				<!-- Elements -->
 				<!--
