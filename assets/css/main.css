@@ -1852,6 +1852,8 @@ input, select, textarea {
 			padding: 0;
 		}
 
+
+
 /* Button */
 
 	input[type="submit"],
@@ -1885,7 +1887,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-		margin-left: 2rem;
+		margin-left: rem;
 	}
 
 		input[type="submit"]:hover,
@@ -2050,12 +2052,11 @@ input, select, textarea {
 /* Form */
 
 	form {
-		margin: 0 0 2rem 0;
+		margin: 0 0 0rem 0;
 	}
 
 		form > :last-child {
-			margin-bottom: 0;
-			margin-left: 0rem;
+
 		}
 
 		form > .fields {
@@ -2080,30 +2081,30 @@ input, select, textarea {
 				-webkit-flex-shrink: 0;
 				-ms-flex-shrink: 0;
 				flex-shrink: 0;
-				padding: 2rem 0 0 2rem;
+				padding: 1rem 0 0 2rem;
 				width: calc(100% - 2rem);
 				
 			}
 
 				form > .fields > .field > :last-child {
 					margin-bottom: 1rem;
-					margin-left: 0rem;
+			
 
 				}
 
 				form > .fields > .field.half {
 					width: calc(50% - 1rem);
-					margin-left: 0rem;
+		
 				}
 
 				form > .fields > .field.third {
 					width: calc(100%/3 - 0.66667rem);
-					margin-left: 0rem;
+	
 				}
 
 				form > .fields > .field.quarter {
 					width: calc(25% - 0.5rem);
-					margin-left: 0rem;
+			
 				}
 
 		@media screen and (max-width: 480px) {
@@ -2111,28 +2112,28 @@ input, select, textarea {
 			form > .fields {
 				margin: -1.5rem 0 2rem -1.5rem;
 				width: calc(100% + 3rem);
-				margin-left: 0rem;
+	
 			}
 
 				form > .fields > .field {
 					padding: 1.5rem 0 0 1.5rem;
 					width: calc(100% - 1.5rem);
-					margin-left: 0rem;
+			
 				}
 
 					form > .fields > .field.half {
 						width: calc(100% - 1.5rem);
-						margin-left: 0rem;
+					
 					}
 
 					form > .fields > .field.third {
 						width: calc(100% - 1.5rem);
-						margin-left: 0rem;
+						
 					}
 
 					form > .fields > .field.quarter {
 						width: calc(100% - 1.5rem);
-						margin-left: 0rem;
+					
 					}
 
 		}
