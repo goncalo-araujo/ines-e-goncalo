@@ -73,24 +73,8 @@
 							</header>
 							<div class="content">
 								<div class="gallery">
-									<a href="images/Asset 1-100.jpg" class="landscape"><img src="images/Asset 1-100.jpg" alt="" /></a>
+									<a href="images/Asset 2-100.jpg" class="landscape"><img src="images/Asset 2-100.jpg" alt="" /></a>
 									<a href="images/monte3.png" class="landscape"><img src="images/monte3.png" alt="" /></a>
-								</div>
-							</div>
-						<!-- partial:index.partial.html -->
-
-						</section>
-
-						<section>
-							<header>
-								<h3>Cerimónia</h3>
-								<p style="text-align: justify;">A cerimónia vai-se realizar por registo civil no local pelas <strong>16:00 horas.</strong> Recomendamos que cheguem com um pouco de antecedência para dar tempo para tudo ok pah?</p>
-							</header>
-							<div class="content">
-								<div class="gallery">
-									<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
-									<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
-									<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
 								</div>
 							</div>
 						<!-- partial:index.partial.html -->
@@ -114,26 +98,30 @@
 										<h3>Direções</h3>
 										<p style="text-align: justify;">Aqui podes obter direções para encontrares a quinta. Se fores de transportes públicos a paragem mais acessível é Évora e podes apanhar comboio ou camioneta com CP, FlixBus, e Rede Expressos.</p>
 									</header>
-									<div class="iframe-container">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<div class="content">
+										<div class="iframe-container" class="landscape">
+											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+										</div>
 									</div>
 									
-												
+									
 									<style>
 										.iframe-container {
 											position: relative;
 											width: 77%;
 											padding-bottom: 56.25%; /* 16:9 aspect ratio */
+											margin: auto auto; /* Center align the container */
 										}
+
 										.iframe-container iframe {
 											position: absolute;
 											top: 0;
-											left: 4rem;
+											left: auto;
 											width: 100%;
 											height: 100%;
 										}
-									
 									</style>
+
 								<!-- partial:index.partial.html -->
 
 								</section>
@@ -159,7 +147,7 @@
 
 
 				<!-- Section -->
-					<section>
+				<!--	<section>
 						<header>
 							<h2>Oferece-nos uma prenda! Pleaaaase</h2>
 						</header>
@@ -169,7 +157,7 @@
 								<li><a href="#" class="button primary large">Get Started</a></li>
 							</ul>
 						</div>
-					</section>
+					</section>  -->
 
 
 
@@ -189,15 +177,11 @@
 									</div>
 					
 									<div class="field" id="guestContainer">
-									
-										<!-- Guest entries will be added here -->
-
-									</div>
-									<div class="field">
-										 
 										<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
+
+										<!-- Guest entries will be added here -->
 									</div>
-					
+														
 									<div class="field" id="peopleContainer">
 										<!-- Children entries will be added here -->
 										<button type="button" onclick="addPerson()">Adicionar criança</button>
@@ -324,6 +308,8 @@
 							guestCounter++;
 						}
 					</script>
+
+					
 					
 					
 
