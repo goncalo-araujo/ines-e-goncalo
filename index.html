@@ -37,7 +37,7 @@
 						</ul>
 					</header>
 					<div class="content" >
-						<span class="image fill" data-position="center"><img src="images/invite-horizontal1.jpg" alt=""  /></span>
+						<span class="image fill" data-position="center"><img src="images/invite-horizontal.jpg" alt=""  /></span>
 					</div>
 				</section>
 
@@ -45,13 +45,17 @@
 				<section id="first">
 					<header>
 						<h2>Um pouco sobre nós.</h2>
-						<p style="text-align: justify;"><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
+						<p style="text-align: justify;">Conhecemo-nos no início de 2021, numa altura de pandemia. Começámos por trocar algumas mensagens, 
+							e a primeira vez que estivemos juntos nem sequer tirámos a mascára. Mas mesmo com todas as restrições, depressa percebemos
+							 que havia uma ligação especial, que rapidamente ganhou força. A escolha da Inês de voltar a Évora no fim desse ano não 
+							 assustou o Gonçalo, que abraçou o Alentejo como sua casa, e aí se construiu um lar para os dois. É com enorme alegria 
+							 que tomamos a decisão de oficializar este compromisso e celebrar o nosso amor, perante a nossa família e amigos mais queridos.</p>
 						
 					</header>
 					<div class="content">
 						<div class="gallery">
-							<a href="images/Asset 1-100.jpg" class="landscape"><img src="images/Cover2.jpg" alt="" /></a>
-							<a href="images/monte3.png" class="landscape"><img src="images/Cover3.jpeg" alt="" /></a>
+							<a href="images/Cover2.jpg" class="landscape"><img src="images/Cover2.jpg" alt="" /></a>
+							<a href="images/Cover3.jpg" class="landscape"><img src="images/Cover3.jpg" alt="" /></a>
 						</div>
 					</div>
 			
@@ -62,21 +66,40 @@
 				<section>
 					<header>
 						<h2>Evento</h2>
+						
 					</header>
 					
 					<div class="content">
 						<section>
 							<header>
 								<h3>Local</h3>
-								<p style="text-align: justify;">Aqui podes obter direções para encontrares a quinta. Se fores de transportes públicos a paragem mais acessível é Évora e podes apanhar comboio ou camioneta com CP, FlixBus, e Rede Expressos.</p>
-								
+								<p style="text-align: justify;">O casamento vai acontecer no Lodge Monte do Sobral, um lugar pitoresco, que nos cativou como o sítio perfeito para a celebração do nosso grande dia.
+									Num ambiente de serenidade, com vistas deslumbrantes sobre a planície Alentejana, o Monte do sobral une harmoniosamente a beleza natural à sua rica história,
+									sendo o local da primeira reunião dos capitães de abril, onde se começou a planear a revolução dos cravos.</p>								
 							</header>
 							<div class="content">
 								<div class="gallery">
-									<a href="images/Asset 2-100.jpg" class="landscape"><img src="images/Asset 2-100.jpg" alt="" /></a>
 									<a href="images/monte3.png" class="landscape"><img src="images/monte3.png" alt="" /></a>
 								</div>
 							</div>
+
+						<!-- partial:index.partial.html -->
+
+						</section>~
+
+						<section>
+							<header>
+								<h3>Cerimónia</h3>
+								<p style="text-align: justify;">A cerimónia irá começar pelas 16:00h, e pedíamos aos nossos convidados 
+									que chegassem 15 a 30 minutos antes, para que tudo corra da melhor forma. A partir daqui, estamos instalados 
+									para a grande festa que vem a seguir!</p>								
+							</header>
+							<div class="content">
+								<div class="gallery" >
+									<a href="images/Asset 2-100.jpg" class="landscape"><img src="images/Asset 2-100.jpg" alt="" /></a>
+								</div>
+							</div>
+
 						<!-- partial:index.partial.html -->
 
 						</section>
@@ -96,13 +119,47 @@
 								<section>
 									<header>
 										<h3>Direções</h3>
-										<p style="text-align: justify;">Aqui podes obter direções para encontrares a quinta. Se fores de transportes públicos a paragem mais acessível é Évora e podes apanhar comboio ou camioneta com CP, FlixBus, e Rede Expressos.</p>
+										<p style="text-align: justify;">A quinta está situada na estrada N257, que liga Viana do Alentejo a Alcáçovas. Podes encontrá-la
+										       							como sinalizado neste mapa, e através da tua app de navegação.</p>
 									</header>
 									<div class="content">
-										<div class="iframe-container" class="landscape">
+										<div class="iframe-container" class="landscape" style="margin-bottom: 4rem;">
 											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 										</div>
+										<div style="text-align: center;" class="content">
+											<button onclick="openNavigation('googleMaps')">Google Maps</button>
+											<button onclick="openNavigation('waze')">Waze</button>
+											<button onclick="openNavigation('appleMaps')">Apple Maps</button>
+	
+										</div>
 									</div>
+							
+									<div id="navigationPopup" style="display:none;">
+										<select id="navOptions">
+										  <option value="googleMaps">Google Maps</option>
+										  <option value="waze">Waze</option>
+										  <!-- Add other navigation options here -->
+										</select>
+										<button onclick="goToNavigation()">Go</button>
+									  </div>
+
+
+									<script>
+										function openNavigation(app) {
+										let destination = "YOUR_DESTINATION"; // Set your destination (latitude,longitude or URL-encoded address)
+										let url;
+
+										if (app === "googleMaps") {
+											url = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+										} else if (app === "waze") {
+											url = `https://www.waze.com/ul?ll=${destination}&navigate=yes`;
+										} else if (app === "appleMaps") {
+											url = `http://maps.apple.com/?daddr=${(38.37752348936354, -8.083184570443924)}`;
+										}
+
+										window.open(url, '_blank'); // Open in a new tab
+										}
+									</script>
 									
 									
 									<style>
@@ -130,21 +187,126 @@
 								<section>
 									<header>
 										<h3>Alojamento</h3>
-										<p style="text-align: justify;">Como podes querer passar a noite perto do local para aproveitar este dia ao máximo, deixamos aqui algumas sugestões de estabelecimentos para várias gamas de preços. </p>
+										<p style="text-align: justify;">A localidade mais próxima da quinta é Viana do Alentejo, a 9 km, onde há algumas opções de alojamentos, bem como na vila de Alvito, a 20 km. Podes ainda optar por ficar em Évora,
+																		a cerca de 30 km, onde há mais opções de escolha. Deixamos-te algumas sugestões e os respectivos contactos.</p>
 									</header>
-									<div class="content">
-										<div class="gallery">
-											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
-										</div>
+									<div class="content">							  
+									  <div class="gallery">
+										<a onclick="openModal('Evora')" class="landscape"><img src="images/Evora.jpg" alt="Evora" /></a>
+										<a onclick="openModal('Viana do Alentejo')"><img src="images/viana.jpg" alt="Viana" /></a>
+										<a onclick="openModal('Alvito')"><img src="images/alvito.jpg" alt="Alvito" /></a>
+									  </div>
 									</div>
+									  
+									  <!-- Modal Structure for Displaying Hotel Lists -->
+									  <div id="hotelModal" class="modal">
+										<div class="modal-content">
+										  <span class="close" onclick="closeModal()">&times;</span>
+										  <div id="hotelDetails">Hotel details will be displayed here.</div>
+										</div>
+									  </div>
+									  
 								</section>
 
 
 						</div>
 					</section>
+					<script>
+						function openModal(cityHotelsId) {
+							const hotelLists = {
+								'Evora': `
+								<ul>
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											<strong>Hotel Ibis Évora 
+										</div>
+										<img src="images/Hotel-Ibis-Evora-Exterior.jpg" alt="Hotel 1" onclick="window.open('https://all.accor.com/ssr/app/ibis/rates/1708/index.pt.shtml?compositions=1&dateIn=2024-02-12&nights=1&hideHotelDetails=false&destination=evora-portugal', '_blank')" class="hotel-image" />
+									</li>
 
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Évora Hotel - 987654321; hotel2@gmail.com 
+										</div>
+										<img src="images/evorahotel.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Selina Évora - 987654321; hotel1@gmail.com
+										</div>
+										<img src="images/selina-evora.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li> </strong>
+
+									<!-- Add more hotels for City 1 -->
+								</ul>
+								`,
+
+								'Viana do Alentejo': `
+								<ul>
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											<strong>Casa de Viana do Alentejo - 123456789; hotel1@gmail.com
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 1" onclick="window.open('http://hotel1website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Hotel 2 in City 2 - 987654321; hotel2@gmail.com
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Hotel 3 in City 2 - 987654321; hotel1@gmail.com </strong>
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<!-- Add more hotels for City 1 -->
+								</ul>
+								`,
+
+								'Alvito': `
+								<ul>
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Hotel 1 in City 3 - 123456789; hotel1@gmail.com
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 1" onclick="window.open('http://hotel1website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Hotel 2 in City 3 - 987654321; hotel2@gmail.com
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<li class="hotel-flex-container">
+										<div class="hotel-info">
+											Hotel 3 in City 3 - 987654321; hotel1@gmail.com
+										</div>
+										<img src="images/gallery/thumbs/07.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
+									</li>
+
+									<!-- Add more hotels for City 1 -->
+								</ul>
+								`,
+								// Repeat for other cities
+							};
+
+							// Update the modal content and display it
+							document.getElementById('hotelDetails').innerHTML = hotelLists[cityHotelsId];
+							document.getElementById('hotelModal').style.display = "block";
+							}
+							function closeModal() {
+													document.getElementById('hotelModal').style.display = "none";
+													}
+
+
+					</script>
 
 				<!-- Section -->
 				<!--	<section>
@@ -168,26 +330,26 @@
 						<header>
 							<h2>Confirma a tua presença</h2>
 						</header>
-						<div class="content">
+						<div class="content" style="text-align: center;">
 							<form action="https://formsubmit.io/send/inesegonccalo@gmail.com" method="POST">
 								<div class="fields">
 									<div class="field">
 										<input type="text" name="name" id="name" placeholder="Nome" />
 										<hr class="form-separator">
 									</div>
-					
+
 									<div class="field" id="guestContainer">
 										<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
 
 										<!-- Guest entries will be added here -->
 									</div>
-														
+																	
 									<div class="field" id="peopleContainer">
 										<!-- Children entries will be added here -->
 										<button type="button" onclick="addPerson()">Adicionar criança</button>
 
 									</div> 
-					
+
 									<div class="field" id="restrictionsContainer">
 										<!-- Food restriction entries will be added here -->
 										<button type="button"  onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
@@ -195,9 +357,9 @@
 									</div>
 								</div>
 								<hr class="form-separator">
-								<ul class="actions">
-									<li><input type="submit" value="Confirmar Presença" class="primary large button" /></li>
-								</ul>
+								<div class="button-container" style="display: flex; justify-content: center;">
+									<input type="submit" value="Confirmar Presença" class="primary large button" />
+								</div>
 							</form>
 						</div>
 					</section> 
@@ -297,9 +459,11 @@
 							var removeButton = document.createElement("button");
 							removeButton.type = "button";
 							removeButton.textContent = "Remover acompanhante";
-							removeButton.onclick = function() {
-								container.remove();
+							removeButton.onclick = function() 
+							{
+							container.remove();
 							};
+							
 							container.appendChild(removeButton);
 					
 							container.appendChild(document.createElement("br")); // Add line break after remove button
@@ -309,7 +473,17 @@
 						}
 					</script>
 
-					
+					<section>
+						<header>
+							<h2>Presentes de Casamento</h2>
+						</header>
+						<div class="content" style="text-align: justify;">
+							<p>Agradecíamos muito o vosso contributo para nos ajudar a acabar de mobilar a nossa casinha, ou na nossa fantástica lua de mel! Deixamos aqui o nosso IBAN, se for esse o vosso método preferencial. Caso assim o seja, 
+								pedíamos que colocassem o vosso nome no descritivo da transferência para podermos agradecer-vos directamente.</p>
+								<p style="text-align: center; font-size: 25px;"><strong> PT50 0035 0807 0004 6170 8306 7</strong></p>
+						</div>
+
+					</section>
 					
 					
 

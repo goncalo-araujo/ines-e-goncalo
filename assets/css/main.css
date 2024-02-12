@@ -1855,6 +1855,19 @@ input, select, textarea {
 
 
 /* Button */
+	#navigationPopup {
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0,0,0,0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	input[type="submit"],
 	input[type="reset"],
@@ -1921,22 +1934,11 @@ input, select, textarea {
 			margin-left: 0rem;
 		}
 
-		input[type="submit"].large,
-		input[type="reset"].large,
-		input[type="button"].large,
-		button.large,
-		.button.large {
-			font-size: 0.7rem;
-			height: 3.2625rem;
-			line-height: 3.2625rem;
-			padding: 0 3.25rem;
-			margin-left: 0rem;
+		.button {
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
-
-		input[type="submit"].wide,
-		input[type="reset"].wide,
-		input[type="button"].wide,
-		button.wide,
 		.button.wide {
 			min-width: 13rem;
 			margin-left: 0rem;
@@ -1980,7 +1982,9 @@ input, select, textarea {
 			background-color: #405fba;
 			box-shadow: none;
 			color: #000000 !important;
-			margin-left: 0rem;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2645,6 +2649,43 @@ input, select, textarea {
 		}
 
 /* Actions */
+	.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+	.modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; }
+	.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
+	.close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
+
+	  .hotel-flex-container {
+		display: inline;
+		justify-content: space-between;
+		align-items: flex-end; /* Adjust vertical alignment as needed */
+		padding:; /* Add some padding around items */
+		.hotel-flex-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch; /* Makes items fill the container */
+			padding: 10px;
+			min-height: 150px;		  }
+		  
+	  }
+	  
+	  
+	  .hotel-info {
+		flex-grow: 1; /* Allows text container to fill available space */
+		padding-right: 20px; /* Ensure some space between text and image */
+	  }
+	  
+	  .hotel-image {
+		cursor: pointer;
+		ma
+		width: auto; /* Adjust based on desired size */
+		max-height: 100px; /* Example height, adjust as needed */
+		transition: transform 0.3s ease; /* Smooth transition for the transform */
+	  }
+	  
+	  .hotel-image:hover {
+		transform: scale(1.05); /* Slightly enlarges the image on hover */
+	  }
+	  
 
 	ul.actions {
 		display: -moz-flex;
@@ -2660,6 +2701,7 @@ input, select, textarea {
 		ul.actions li {
 			padding: 0 0 0 1rem;
 			vertical-align: middle;
+			display: inline-block;
 		}
 
 		ul.actions.special {
@@ -2975,9 +3017,22 @@ input, select, textarea {
 				object-fit: cover;
 				object-position: center;
 				width: 100%;
+				transition: transform 0.3s ease;
+  				cursor: pointer; /* Indicates the image is clickable */
 			}
 
+			.gallery a:hover img {
+				display: block;
+				height: 25vw;
+				min-height: 18rem;
+				object-fit: cover;
+				object-position: center;
+				width: 100%;
+				transform: scale(1.05); /* Enlarges the image on hover */
+			  }
+
 			.gallery a.landscape {
+				
 				width: 100%;
 			}
 
