@@ -2011,6 +2011,8 @@ input, select, textarea {
 			input[type="button"],
 			button,
 			.button {
+				position: relative;
+				display: center;
 				font-size: 0.7rem;
 				height: 3.3rem;
 				line-height: 3.3rem;
@@ -2022,6 +2024,8 @@ input, select, textarea {
 				input[type="button"].large,
 				button.large,
 				.button.large {
+					position: relative;
+					display: inline;
 					font-size: 0.8rem;
 					height: 3.75rem;
 					line-height: 3.75rem;
@@ -2056,6 +2060,7 @@ input, select, textarea {
 /* Form */
 
 	form {
+		display: center;
 		margin: 0 0 0rem 0;
 	}
 
