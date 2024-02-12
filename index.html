@@ -150,12 +150,12 @@
 										let url;
 
 										if (app === "googleMaps") {
-											url = `https://maps.app.goo.gl/GB6sCZVPgj2Y1EXb9`;
+											url = `https://www.google.com/maps/dir/?api=1&destination=${MontedoSobral}`;
 										} else if (app === "waze") {
-											url = `https://www.waze.com/en/live-map/directions?latlng=38.37673123648516%2C-8.0834012068226`;
+											url = `https://www.waze.com/ul?ll=${38.37752348936354,-8.083184570443924}&navigate=yes`;
 										} else if (app === "appleMaps") {
-											url = `http://maps.apple.com/?daddr=38.37752348936354,-8.083184570443924`;
-											}
+											url = `http://maps.apple.com/?daddr=${MontedoSobral}`;
+										}
 
 										window.open(url, '_blank'); // Open in a new tab
 										}
@@ -192,7 +192,7 @@
 									</header>
 									<div class="content">							  
 									  <div class="gallery">
-										<a onclick="openModal('Evora')" class="landscape"><img src="images/evora1.jpg" alt="Evora" /></a>
+										<a onclick="openModal('Evora')" class="landscape"><img src="images/Evora.jpg" alt="Evora" /></a>
 										<a onclick="openModal('Viana do Alentejo')"><img src="images/viana.jpg" alt="Viana" /></a>
 										<a onclick="openModal('Alvito')"><img src="images/alvito.jpg" alt="Alvito" /></a>
 									  </div>
@@ -360,7 +360,7 @@
 								<hr class="form-separator" >
 								<div class="button-container" style="justify-content: center;">
 									<input type="submit" value="Confirmar Presença" class="primary large button" />
-								</div>
+								/div>
 							</form>
 						</div>
 					</section> 
