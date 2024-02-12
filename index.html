@@ -129,7 +129,6 @@
 										<div style="text-align: center;" class="content">
 										  <button onclick="openNavigation('googleMaps')">Google Maps</button>
 										  <button onclick="openNavigation('waze')">Waze</button>
-										  <button onclick="openNavigation('appleMaps')">Apple Maps</button>
 										</div>
 									  </div>
 									  
@@ -152,12 +151,8 @@
 										  } else if (app === "waze") {
 											let url = `https://www.waze.com/ul?ll=${MontedoSobral}&navigate=yes`;
 											window.open(url, '_blank');
-										  } else if (app === "appleMaps") {
-											// Correct usage of encodeURIComponent for the Apple Maps URL
-											let url = `https://maps.apple.com/?daddr=${encodeURIComponent(MontedoSobral)}`;
-											window.open(url, '_blank');
-										  }
 										}
+									}
 									  </script>
 									  
 									
