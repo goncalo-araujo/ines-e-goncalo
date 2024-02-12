@@ -149,16 +149,17 @@
 										let destination = "YOUR_DESTINATION"; // Set your destination (latitude,longitude or URL-encoded address)
 										let url;
 
-										if (app === "googleMaps") {
-											url = `https://www.google.com/maps/dir/?api=1&destination=${MontedoSobral}`;
-										} else if (app === "waze") {
-											url = `https://www.waze.com/ul?ll=${38.37752348936354,-8.083184570443924}&navigate=yes`;
-										} else if (app === "appleMaps") {
-											url = `http://maps.apple.com/?daddr=${MontedoSobral}`;
-										}
+										let MontedoSobral = "38.37752348936354,-8.083184570443924"; // Ensure this variable is defined somewhere in your script
 
-										window.open(url, '_blank'); // Open in a new tab
+										if (app === "googleMaps") {
+										url = `https://www.google.com/maps/dir/?api=1&destination=${MontedoSobral}`;
+										} else if (app === "waze") {
+										// For Waze, directly use the coordinates without template literals for the variable part
+										url = `https://www.waze.com/ul?ll=38.37752348936354,-8.083184570443924&navigate=yes`;
+										} else if (app === "appleMaps") {
+										url = `http://maps.apple.com/?daddr=${MontedoSobral}`;
 										}
+									}
 									</script>
 									
 									
