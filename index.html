@@ -123,18 +123,17 @@
 										       							como sinalizado neste mapa, e através da tua app de navegação.</p>
 									</header>
 									<div class="content">
-										<div class="iframe-container" class="landscape" style="margin-bottom: 4rem;">
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+										<div class="iframe-container" style="margin-bottom: 4rem;">
+										  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210939.93059853843!2d-8.115804976721527!3d38.544681334609145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19f58412d73f57%3A0xb440ab69c72ae563!2sLodge%20Monte%20do%20Sobral!5e1!3m2!1spt-PT!2spt!4v1699894913997!5m2!1spt-PT!2spt" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 										</div>
 										<div style="text-align: center;" class="content">
-											<button onclick="openNavigation('googleMaps')">Google Maps</button>
-											<button onclick="openNavigation('waze')">Waze</button>
-											<button onclick="openNavigation('appleMaps')">Apple Maps</button>
-	
+										  <button onclick="openNavigation('googleMaps')">Google Maps</button>
+										  <button onclick="openNavigation('waze')">Waze</button>
+										  <button onclick="openNavigation('appleMaps')">Apple Maps</button>
 										</div>
-									</div>
-							
-									<div id="navigationPopup" style="display:none;">
+									  </div>
+									  
+									  <div id="navigationPopup" style="display:none;">
 										<select id="navOptions">
 										  <option value="googleMaps">Google Maps</option>
 										  <option value="waze">Waze</option>
@@ -142,25 +141,25 @@
 										</select>
 										<button onclick="goToNavigation()">Go</button>
 									  </div>
-
-
-									<script>
+									  
+									  <script>
 										function openNavigation(app) {
-										let destination = "YOUR_DESTINATION"; // Set your destination (latitude,longitude or URL-encoded address)
-										let url;
-
-										let MontedoSobral = "38.37752348936354,-8.083184570443924"; // Ensure this variable is defined somewhere in your script
-
-										if (app === "googleMaps") {
-										url = `https://www.google.com/maps/dir/?api=1&destination=${MontedoSobral}`;
-										} else if (app === "waze") {
-										// For Waze, directly use the coordinates without template literals for the variable part
-										url = `https://www.waze.com/ul?ll=38.37752348936354,-8.083184570443924&navigate=yes`;
-										} else if (app === "appleMaps") {
-										url = `http://maps.apple.com/?daddr=${MontedoSobral}`;
+										  let MontedoSobral = "38.37752348936354,-8.083184570443924"; // Defined coordinates
+									  
+										  if (app === "googleMaps") {
+											let url = `https://www.google.com/maps/dir/?api=1&destination=${MontedoSobral}`;
+											window.open(url, '_blank');
+										  } else if (app === "waze") {
+											let url = `https://www.waze.com/ul?ll=${MontedoSobral}&navigate=yes`;
+											window.open(url, '_blank');
+										  } else if (app === "appleMaps") {
+											// Correct usage of encodeURIComponent for the Apple Maps URL
+											let url = `https://maps.apple.com/?daddr=${encodeURIComponent(MontedoSobral)}`;
+											window.open(url, '_blank');
+										  }
 										}
-									}
-									</script>
+									  </script>
+									  
 									
 									
 									<style>
