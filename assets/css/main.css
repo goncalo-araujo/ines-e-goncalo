@@ -3316,7 +3316,7 @@ input, select, textarea {
 
 		#wrapper:before {
 			background-attachment: fixed;
-			background-color:#5D9B9B; 
+			background-color:#67a5a5; 
 			background-position: -50% 10%;
 			background-repeat: repeat-y;
 			background-size: 75% auto;
