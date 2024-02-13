@@ -37,7 +37,7 @@
 						</ul>
 					</header>
 					<div class="content" >
-						<span class="image fill" data-position="center"><img src="images/invite-horizontal.jpg" alt=""  /></span>
+						<span class="image fill" data-position="center"><img src="images/invite-horizontal1.jpg" alt=""  /></span>
 					</div>
 				</section>
 
@@ -79,7 +79,7 @@
 							</header>
 							<div class="content">
 								<div class="gallery">
-									<a href="images/monte3.png" class="landscape"><img src="images/monte3.png" alt="" /></a>
+									<a href="images/monte3.png" class="landscape"><img src="images/IMG_0134.jpeg" alt="" /></a>
 								</div>
 							</div>
 
@@ -95,19 +95,69 @@
 									para a grande festa que vem a seguir!</p>								
 							</header>
 							<div class="content">
-								<div class="gallery" >
-									<a href="images/Asset 2-100.jpg" class="landscape"><img src="images/Asset 2-100.jpg" alt="" /></a>
+								<div class="iframe-container1" >
+									<iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube.com/embed/U3m3lZFE1Ho?si=FmcaCZyDX45J1Wex&amp";start=1 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 								</div>
 							</div>
 
 						<!-- partial:index.partial.html -->
 
 						</section>
-
-
 					</div>
 				</section>
 
+				<style>
+					.iframe-container1 {
+						position: relative;
+						width: 100%;
+						padding-bottom: 56.25%; /* 16:9 aspect ratio */
+						margin: auto auto; /* Center align the container */
+					}
+
+					.iframe-container1 iframe {
+						position: absolute;
+						top: 0;
+						left: auto;
+						width: 100%;
+						height: 100%;
+					}
+				</style>
+
+				<script>
+					var player;
+					function onYouTubeIframeAPIReady() {
+					player = new YT.Player('youtubeVideo', {
+						events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+						}
+					});
+					}
+				
+					function onPlayerReady(event) {
+					// Start at 1 second
+					event.target.seekTo(1);
+					event.target.playVideo();
+					}
+				
+					function onPlayerStateChange(event) {
+					if (event.data == YT.PlayerState.PLAYING) {
+						// Stop 24 seconds after start (at 25 seconds)
+						setTimeout(stopVideo, 24000); // 24000 milliseconds = 24 seconds
+					}
+					}
+				
+					function stopVideo() {
+					player.pauseVideo();
+					player.seekTo(1); // Go back to the start time (1 second)
+					player.playVideo(); // Play again
+					}
+				</script>
+				<script src="https://www.youtube.com/iframe_api"></script>
+				
+
+				
 				<!-- Section -->
 				<section>
 						<header>
