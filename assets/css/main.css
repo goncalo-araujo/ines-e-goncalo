@@ -3026,11 +3026,12 @@ input, select, textarea {
   				cursor: pointer; /* Indicates the image is clickable */
 			}
 			.gallery video {
-				position: relative;
+				position: center;
 				top: 0;
 				left: 0;
-				width: 100%;
+				width: 96%;
 				height: 100%;
+				margin-left: 1.5rem;
 			  }
 
 			.gallery a:hover img {
@@ -3150,6 +3151,8 @@ input, select, textarea {
 					max-height: 90vh;
 					max-width: 90vw;
 				}
+
+				
 
 			.gallery .modal.visible {
 				pointer-events: auto;
