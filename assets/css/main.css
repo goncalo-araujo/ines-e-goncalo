@@ -3026,12 +3026,13 @@ input, select, textarea {
   				cursor: pointer; /* Indicates the image is clickable */
 			}
 			.gallery video {
-				position: center;
-				top: 0;
-				left: 0;
-				width: 96%;
-				height: 100%;
-				margin-left: 1.5rem;
+				display: block;
+				height: 25vw;
+				min-height: 18rem;
+				object-fit: cover;
+				object-position: center;
+				margin-left: 1.25rem;
+				width: calc(100% - 1.25rem);
 			  }
 
 			.gallery a:hover img {
