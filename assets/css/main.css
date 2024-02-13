@@ -3032,7 +3032,7 @@ input, select, textarea {
 				object-fit: cover;
 				object-position: center;
 				margin-left: 1.25rem;
-				width: calc(100% - 1.25rem);
+				width: 100%;
 			  }
 
 			.gallery a:hover img {
