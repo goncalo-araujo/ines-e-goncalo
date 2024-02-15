@@ -220,21 +220,21 @@
 								<ul>
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											<strong>Hotel Ibis Évora  - +351 266 760 700
+											<strong>Hotel Ibis Évora  <br>+351 266 760 700
 										</div>
 										<img src="images/Hotel-Ibis-Evora-Exterior.jpg" alt="Hotel 1" onclick="window.open('https://all.accor.com/ssr/app/ibis/rates/1708/index.pt.shtml?compositions=1&dateIn=2024-02-12&nights=1&hideHotelDetails=false&destination=evora-portugal', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Évora Hotel - +351 266 748 800; 
+											Évora Hotel <br>+351 266 748 800; 
 										</div>
 										<img src="images/evorahotel.jpg" alt="Hotel 2" onclick="window.open('http://hotel2website.com', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											ZOETIC sustainable rooms - +351 964 208 727;
+											ZOETIC sustainable rooms <br>+351 964 208 727;
 										</div>
 										<img src="images/zoetic.jpg" alt="Hotel 2" onclick="window.open('https://www.booking.com/Share-uQ8TW6', '_blank')" class="hotel-image" />
 									</li> </strong>
@@ -247,28 +247,28 @@
 								<ul>
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											<strong>AL O Convento - +351 911 025 282;
+											<strong>AL O Convento <br>+351 911 025 282;
 										</div>
 										<img src="images/Convento.jpg" alt="Hotel 1" onclick="window.open('https://alojamentooconvento.pt/contactos', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Casa Barrigoto - + 351 960 226 022;
+											Casa Barrigoto <br>+ 351 960 226 022;
 										</div>
 										<img src="images/barrigoto.png" alt="Hotel 2" onclick="window.open('https://www.guiadacidade.pt/pt/alojamento-23284-hospedaria-casa-barrigoto', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Casa de Viana do Alentejo - +351 968 030 577; 
+											Casa de Viana do Alentejo <br> +351 968 030 577; 
 										</div>
 										<img src="images/casaviana.jpg" alt="Hotel 2" onclick="window.open('https://www.booking.com/Share-z1Gzal', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Hospedaria Maria de Jesus - +351 962 382 190; </strong>
+											Hospedaria Maria de Jesus <br> +351 962 382 190; </strong>
 										</div>
 										<img src="images/hospedaria_jesus.jpg" alt="Hotel 2" onclick="window.open('https://www.facebook.com/people/Hospedaria-Maria-de-Jesus/100063492972778/', '_blank')" class="hotel-image" />
 									</li>
@@ -281,21 +281,21 @@
 								<ul>
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Pousada do Castelo de Alvito - +351 284 480 700;
+											<p>Pousada do Castelo de Alvito <br> +351 284 480 700;</p>
 										</div>
 										<img src="images/casteloalvito.jpg" alt="Hotel 1" onclick="window.open('https://www.booking.com/Share-ApY8MD', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Hospedaria A Varanda - +351 284 485 135; 
+											Hospedaria A Varanda  <br> +351 284 485 135; 
 										</div>
 										<img src="images/varanda.jpg" alt="Hotel 2" onclick="window.open('https://www.booking.com/Share-wvdghOi', '_blank')" class="hotel-image" />
 									</li>
 
 									<li class="hotel-flex-container">
 										<div class="hotel-info">
-											Hospedaria Dália - +351 284485352; 
+											Hospedaria Dália <br> +351 284485352; 
 										</div>
 										<img src="images/dalia.jpg" alt="Hotel 2" onclick="window.open('https://www.visitalentejo.pt/pt/catalogo/onde-dormir/alojamento-local/hospedaria-dalia/', '_blank')" class="hotel-image" />
 									</li>
@@ -344,8 +344,8 @@
 								<div class="fields">
 									<div class="field">
 										<input type="text" name="name" id="name" placeholder="Nome" />
-										<hr class="form-separator">
 									</div>
+									
 
 									<div class="field" id="guestContainer">
 										<button type="button" onclick="addGuest()">Adicionar acompanhante</button>
@@ -362,11 +362,12 @@
 									<div class="field" id="restrictionsContainer">
 										<!-- Food restriction entries will be added here -->
 										<button type="button"  onclick="addFoodRestriction()">Adicionar restrição alimentar</button>
-										<hr class="form-separator" >
+										
 									</div>
 									
 								</div>
-								
+								<hr class="form-separator" >
+
 								<div class="button-container" style="justify-content: center;">
 									<input type="submit" value="Confirmar Presença" class="primary large button" />
 								</div>
@@ -439,7 +440,7 @@
 							};
 							restrictionContainer.appendChild(removeRestrictionButton);
 					
-							restrictionContainer.appendChild(document.createElement("br")); // Add line break after remove button
+							restrictionContainer.appendChild(document.createElement("lb")); // Add line break after remove button
 					
 							document.getElementById("restrictionsContainer").appendChild(restrictionContainer);
 							restrictionCounter++;
