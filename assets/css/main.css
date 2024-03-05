@@ -2002,7 +2002,7 @@ input, select, textarea {
 			button.primary:active,
 			.button.primary:active {
 				background-color:#A0B179;
-				margin-left: 0rem;
+
 			}
 
 		@media screen and (max-width: 736px) {
